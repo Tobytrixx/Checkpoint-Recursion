@@ -1,0 +1,21 @@
+/*Name Algorithm with array of string to test*/
+ALGORITHM a_Palindrome(word)
+//Declaration of variable to signify if string is a palindrome or not//
+VAR
+    is_Pal: BOOLEAN;
+BEGIN
+//Condition to test if string is less than or equal to 1//
+    IF (word.length <= 1) THEN
+        is_Pal = true
+        return is_Pal;
+//Condition to test if first element of string is equal to last element of string//
+    ELSE_IF (word[0] == word[word.length-1]) THEN
+//Instruction to recursively test if first and last elements of string if the match//
+        word = word.splice(word[0] And [word.length-1]);
+        return is_Pal(word)
+    ELSE
+//Instructions to execute if first and last element of string do not match//
+        is_Pal = false;
+        return is_Pal
+    END_IF
+END
